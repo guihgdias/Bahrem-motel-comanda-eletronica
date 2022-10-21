@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bahrem - Estadia</title>
+
+    <!--Styles sheets-->
+    <link rel="stylesheet" href="styles/global.css">
+
+    <!--Style Reset-->
+    <link rel="stylesheet" href="styles/reset.css">
+  </head>
+  <body>
+    <!--Models-->
+    <div class="models">
+      <table>
+        <tr class="customer">
+          <td class="id">01</td>
+          <td class="name">Guilherme Henrique</td>
+          <td class="bedroom">101</td>
+          <td class="stay">Simples</td>
+          <td class="car">HB20</td>
+          <td class="time-enter">16:00</td>
+          <td class="time-exit">19:00</td>
+          <td class="buttons">
+            <button id="edit-customer">Visualizar</button>
+            <button id="exit-customer">Finalizar</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!--Modals-->
+    <div class="editModal">
+      <div class="customerInfo">
+        <label>Código de identificação:<span class="id"></span></label>
+        <label>Nome do cliente:<span class="name"></label>
+        <label>Suíte:<span class="bedroom"></span></label>
+        <label>Tipo de estadia:<span class="stay"></label>
+        <label>Veículo:<span class="car"></span></label>
+        <label>Cor do veículo:<span class="color"></label>
+        <label>Placa do veículo:<span class="plate"></span></label>
+        <label>Observações:<span class="description"></label>
+        <label>Data de entrada:<span class="dateEnter"></span> as <span class="hoursEnter"></span></label>
+        <label>Data de saída:<span class="dateExit"></span> as <span class="hoursExit"></span></label>
+      </div>
+      <div class="closeModal">
+        X
+      </div>
+    </div>
+
+    <div class="container">
+      <form class="newcustomer-form">
+        <div class="inputs">
+          <div class="row">
+            <select name="bedrooms" id="bedrooms">
+              <option disabled selected value="default">Suíte</option>
+              <option value="101">101</option>
+              <option value="102">102</option>
+              <option value="103">103</option>
+              <option value="104">104</option>
+              <option value="105">105</option>
+              <option value="106">106</option>
+            </select>
+            <select name="stay" id="stay">
+              <option disabled selected value="default">Estadia</option>
+              <option value="Simples">Simples</option>
+              <option value="Pernoite">Pernoite</option>
+            </select>
+          </div>
+          <div class="row">
+            <input type="text" id="customer" name="customer" placeholder="Cliente" maxlength="25" required>
+            <input type="text" id="car" name="car" placeholder="Carro" maxlength="10" required>
+          </div>
+          <div class="row">
+            <input type="text" id="color" name="color" placeholder="Cor" maxlength="10" required>
+            <input type="text" id="plate" name="plate" placeholder="Placa" maxlength="10" required>
+          </div>
+          <textarea id="note" name="note" placeholder="Observações"></textarea>
+        </div>
+        <input type="submit" value="ADICIONAR CLIENTE" class="submitCustomer">
+      </form>
+
+      <table class="customers-table">
+        <tr>
+          <th>Id</th>
+          <th>Cliente</th>
+          <th>Suíte</th>
+          <th>Estadia</th>
+          <th>Carro</th>
+          <th>Entrada</th>
+          <th>Saída</th>
+          <th>Confirmar Saída</th>
+        </tr>
+      </table>
+    </div>
+    <script src="scripts/global.js"></script>
+    <script src="scripts/components/addCustomer.js"></script>
+  </body>
+</html>
